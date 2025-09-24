@@ -13,17 +13,17 @@ void print_debug(const string& message) {
          cerr << "[DEBUG] " << message << endl;
 }
 
-      string get_timestamp() {
-       auto now = chrono::system_clock::now();
-       auto time_t = chrono::system_clock::to_time_t(now);
-       auto ms = chrono::duration_cast< chrono::milliseconds>(
-         now.time_since_epoch()) % 1000;
-       
-        stringstream ss;
-       ss << put_time( localtime(&time_t), "%H:%M:%S");
-       ss << '.' << setfill('0') << setw(3) << ms.count();
-       return ss.str();
-}
+string get_timestamp() {
+   auto now = chrono::system_clock::now();
+   auto time_t = chrono::system_clock::to_time_t(now);
+   auto ms = chrono::duration_cast< chrono::milliseconds>(
+     now.time_since_epoch()) % 1000;
+  
+    stringstream ss;
+   ss << put_time( localtime(&time_t), "%H:%M:%S");
+   ss << '.' << setfill('0') << setw(3) << ms.count();
+   return ss.str();
+}  
 
 void send_message(int socket_fd, const TcpMessage& msg) {
        // Send the message structure
