@@ -21,18 +21,17 @@
 
 ## 编译方法
 
-建议使用 g++ 编译：
-
 ```sh
+cd ./tcp_server
 # 编译 TCP 服务器和客户端
-g++ -o tcp_server/tcp_server TCPServer.cpp -lpthread
-g++ -o tcp_server/tcp_client TCPClient.cpp -lpthread
+g++ TCPServer.cpp -o tcp_server
+g++ TCPClient.cpp -o tcp_client
 
+cd ./udp_server
 # 编译 UDP 服务器和客户端
-g++ -o udp_server/udp_server UDPServer.cpp -lpthread
-g++ -o udp_server/udp_client UDPClient.cpp -lpthread
+g++ UDPServer.cpp -o udp_server
+g++ UDPClient.cpp -o udp_client
 ```
-
 ## 运行方法
 
 ### TCP 聊天服务器
