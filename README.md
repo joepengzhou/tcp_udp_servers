@@ -7,6 +7,8 @@
 - 开发 Peng Zhou
 - 测试 Mengmeng Xu
 
+## 代码管理
+使用Git管理项目文件
 ## 目录结构
 
 - `tcp_server/`  
